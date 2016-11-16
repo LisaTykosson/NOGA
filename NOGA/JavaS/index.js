@@ -486,7 +486,7 @@ function programvari() {
         document.getElementById("patientkolon").style.display = "block";
         document.getElementById("fyndkolon").style.display = "block";
         document.getElementById("padkolon").style.display = "block";
-        document.getElementById("tidopererad").style.display = "block";
+       
 
     }
     else {
@@ -494,7 +494,14 @@ function programvari() {
         document.getElementById("patientkolon").style.display = "none";
         document.getElementById("fyndkolon").style.display = "none";
         document.getElementById("padkolon").style.display = "none";
+        
+    }
+}
+function tidigoperation(){
+    if (document.getElementById("tidop").selectedIndex == "2") {
+        document.getElementById("tidopererad").style.display = "block";
+    }
+    else {
         document.getElementById("tidopererad").style.display = "none";
     }
 }
-
