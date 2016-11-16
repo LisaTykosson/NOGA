@@ -491,6 +491,14 @@ function programvari(){
         document.getElementById("ulkolon").style.display = "block";
         document.getElementById("biopkolon").style.display = "block";
     }
+    else if 
+        (document.getElementById("organprogram").selectedIndex == "1") {
+        document.getElementById("specvari").style.display = "block"
+        document.getElementById("rtgkolon").style.display = "block";
+        document.getElementById("endkolon").style.display = "block";
+        document.getElementById("ulkolon").style.display = "block";
+        document.getElementById("biopkolon").style.display = "block";
+    }
     else {
         document.getElementById("specvari").style.display = "none"
         document.getElementById("patientkolon").style.display = "none";
