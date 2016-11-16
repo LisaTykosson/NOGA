@@ -550,3 +550,11 @@ function visabiop() {
         document.getElementById("undersokningarbiop").style.display = "none";
     }
 }
+function fyndvidareatg() {
+    if (document.getElementById("fyndundersok").selectedIndex == "2") {
+        document.getElementById("vidareundersokning").style.display = "block";
+    }
+    else {
+        document.getElementById("vidareundersokning").style.display = "none";
+    }
+}
