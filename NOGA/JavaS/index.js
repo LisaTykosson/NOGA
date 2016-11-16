@@ -480,21 +480,26 @@ function annankontr() {
         document.getElementById("reason").style.display = "none";
     }
 }
-function programvari() {
+function programvari(){
     if (document.getElementById("organprogram").selectedIndex == "2") {
         document.getElementById("specvari").style.display = "block"
         document.getElementById("patientkolon").style.display = "block";
         document.getElementById("fyndkolon").style.display = "block";
         document.getElementById("padkolon").style.display = "block";
-       
-
+        document.getElementById("rtgkolon").style.display = "block";
+        document.getElementById("endkolon").style.display = "block";
+        document.getElementById("ulkolon").style.display = "block";
+        document.getElementById("biopkolon").style.display = "block";
     }
     else {
         document.getElementById("specvari").style.display = "none"
         document.getElementById("patientkolon").style.display = "none";
         document.getElementById("fyndkolon").style.display = "none";
         document.getElementById("padkolon").style.display = "none";
-        
+        document.getElementById("rtgkolon").style.display = "none";
+        document.getElementById("endkolon").style.display = "none";
+        document.getElementById("ulkolon").style.display = "none";
+        document.getElementById("biopkolon").style.display = "none";
     }
 }
 function tidigoperation(){
@@ -503,5 +508,37 @@ function tidigoperation(){
     }
     else {
         document.getElementById("tidopererad").style.display = "none";
+    }
+}
+function visartg() {
+    if (document.getElementById("rtg").selectedIndex == "2") {
+        document.getElementById("undersokningarrtg").style.display = "block";
+    }
+    else {
+        document.getElementById("undersokningarrtg").style.display = "none";
+    }
+}
+function visaendo() {
+    if (document.getElementById("endo").selectedIndex == "2") {
+        document.getElementById("undersokningarendo").style.display = "block";
+    }
+    else {
+        document.getElementById("undersokningarendo").style.display = "none";
+    }
+}
+function visaul() {
+    if (document.getElementById("ul").selectedIndex == "2") {
+        document.getElementById("undersokningarul").style.display = "block";
+    }
+    else {
+        document.getElementById("undersokningarul").style.display = "none";
+    }
+}
+function visabiop() {
+    if (document.getElementById("biop").selectedIndex == "2") {
+        document.getElementById("undersokningarbiop").style.display = "block";
+    }
+    else {
+        document.getElementById("undersokningarbiop").style.display = "none";
     }
 }
