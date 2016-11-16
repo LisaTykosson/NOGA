@@ -1,0 +1,1066 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="Css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Css/bootstrap.css" rel="stylesheet" />
+    <link href="Css/bootstrap.min.css" rel="stylesheet" />
+    <script src="JavaS/bootstrap.js"></script>
+
+    <script src="JavaS/index.js"></script>
+
+</head>
+<body>
+    <ul class="nav nav-pills nav-justified navbar-default center-block" style="width:70%">
+        <li role="presentation" id="diag" class="active"><a href="Index.html">Genetisk utredning</a></li>
+        <li role="presentation" id="kir"><a href="Colon.html">Kontroller</a></li>
+
+
+    </ul>
+    <br />
+    <div class="panel panel-default center-block" style="width:70%">
+        <div class="panel panel-default panel-heading panel-title">Inrapporteringsuppgifter</div>
+        <div class="panel panel-body">
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Initierat av</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" disabled placeholder="Automatiskt av systemet"/>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Inrapportör</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" disabled placeholder="Automatiskt av systemet" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Inrapporterande enhet</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" disabled placeholder="Automatiskt av systemet"  />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Inrapporteringsdatum</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" placeholder="2016-10-03" disabled />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Läkare</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="panel panel-default center-block" style="width:70%">
+        <div class="panel panel-default panel-heading panel-title">En passande rubrik</div>
+        <div class="panel panel-body">
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Kontaktväg</label>
+                <div class="col-xs-3">
+                    <select class="form-control">
+                        <option id="0">--Välj--</option>
+                        <option id="1">Remiss från allmänläkare</option>
+                        <option id="2">Remiss från sjukhus/annan specialitet</option>
+                        <option id="3">Egen remiss</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Datum för utfärdande av remiss</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Datum för bedömning</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="control-label col-sm-3">Typ av kontakt</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="besok" onchange="besoktyp()">
+                        <option id="0">--Välj--</option>
+                        <option id="1">Brev</option>
+                        <option id="2">Telefon</option>
+                        <option id="3">Mottagningsbesök</option>
+                        </select>
+                </div>
+            </div>
+            <div class="row form-group" id="typkontakt" style="display:none">
+                <label class="control-label col-sm-3">Datum för kontakt</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        
+            </div>
+        </div>
+    <div class="panel panel-default center-block" style="width:70%">
+                <div class="panel panel-default panel-heading panel-title">Undersökningar i primärutredning</div>
+                <div class="panel panel-body">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Är individen indexperson i famlijen?</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" >
+                                <option id="0">--Välj--</option>
+                                <option id="1">Nej</option>
+                                <option id="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Uppfyller familjen/individen kriterier för mutationsscreening?</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option id="0">--Välj--</option>
+                                <option id="1">Nej</option>
+                                <option id="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Är mutationsscreening utförd i famlijen?</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="labind" onchange="labutrind()">
+                                <option id="0">--Välj--</option>
+                                <option id="1">Nej</option>
+                                <option id="2">Ja</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Har kliniskt relevant mutation påvisats?</label>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="utmsi" onchange="mut()">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">Nej</option>
+                                    <option id="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Har genetisk utredning gjorts på individen?</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="labindivid" onchange="labutfall()">
+                                <option id="0">--Välj--</option>
+                                <option id="1">Nej</option>
+                                <option id="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="utfall" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Utfall av laborativ analys</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">Bärare</option>
+                                    <option id="2">Icke bärare</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Analys av  MSI/IHC på individ/familjemedlem</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option id="0">--Välj--</option>
+                                <option id="1">Nej</option>
+                                <option id="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                   
+                    
+                    <div id="screenind" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Antal gener som påvisat mutation</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control" id="mutationer" onchange="antalgen()">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">0</option>
+                                        <option id="2">1</option>
+                                        <option id="3">2</option>
+                                        <option id="4">3</option>
+                                        <option id="5">4</option>
+                                        <option id="6">5</option>
+                                        <option id="7">6</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group" id="gen1" style="display:none">
+                            <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="genlista1" onchange="baspar()">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">MLH1</option>
+                                    <option id="2">MSH2</option>
+                                    <option id="3">MSH6</option>
+                                    <option id="4">PMS2</option>
+                                    <option id="5">MUTYH</option>
+                                    <option id="6">APC</option>
+                                    <option id="7">SMAD3</option>
+                                    <option id="8">STK11</option>
+                                    <option id="9">BRCA1</option>
+                                    <option id="10">BRCA2</option>
+                                    <option id="11">PALB2</option>
+                                    <option id="12">FLCN</option>
+                                    <option id="13">SDHB</option>
+                                    <option id="14">SDHC</option>
+                                    <option id="15">SDHD</option>
+                                    <option id="16">VHL</option>
+                                    <option id="17">Annan gen</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="mlh1" style="display:none">
+
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Basparsförändring MLH1</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Proteinförändring MLH1</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Referenssekvens</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            </div>
+                     
+                        <div id="brca1" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Basparsförändring BRCA1</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Proteinförändring BRCA1</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Referenssekvens</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group" id="gen2" style="display:none">
+                            <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="genlista2" onchange="protein()">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">MLH1</option>
+                                    <option id="2">MSH2</option>
+                                    <option id="3">MSH6</option>
+                                    <option id="4">PMS2</option>
+                                    <option id="5">MUTYH</option>
+                                    <option id="6">APC</option>
+                                    <option id="7">SMAD3</option>
+                                    <option id="8">STK11</option>
+                                    <option id="9">BRCA1</option>
+                                    <option id="10">BRCA2</option>
+                                    <option id="11">PALB2</option>
+                                    <option id="12">FLCN</option>
+                                    <option id="13">SDHB</option>
+                                    <option id="14">SDHC</option>
+                                    <option id="15">SDHD</option>
+                                    <option id="16">VHL</option>
+                                    <option id="17">Annan gen</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="pms2" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Basparsförändring PMS2</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Proteinförändring PMS2</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Referenssekvens</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="brca2" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Basparsförändring BRCA2</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Proteinförändring BRCA2</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Referenssekvens</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group" id="gen3" style="display:none">
+                            <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">MLH1</option>
+                                    <option id="2">MSH2</option>
+                                    <option id="3">MSH6</option>
+                                    <option id="4">PMS2</option>
+                                    <option id="5">MUTYH</option>
+                                    <option id="6">APC</option>
+                                    <option id="7">SMAD3</option>
+                                    <option id="8">STK11</option>
+                                    <option id="9">BRCA1</option>
+                                    <option id="10">BRCA2</option>
+                                    <option id="11">PALB2</option>
+                                    <option id="12">FLCN</option>
+                                    <option id="13">SDHB</option>
+                                    <option id="14">SDHC</option>
+                                    <option id="15">SDHD</option>
+                                    <option id="16">VHL</option>
+                                    <option id="17">Annan gen</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group" id="gen4" style="display:none">
+                            <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">MLH1</option>
+                                    <option id="2">MSH2</option>
+                                    <option id="3">MSH6</option>
+                                    <option id="4">PMS2</option>
+                                    <option id="5">MUTYH</option>
+                                    <option id="6">APC</option>
+                                    <option id="7">SMAD3</option>
+                                    <option id="8">STK11</option>
+                                    <option id="9">BRCA1</option>
+                                    <option id="10">BRCA2</option>
+                                    <option id="11">PALB2</option>
+                                    <option id="12">FLCN</option>
+                                    <option id="13">SDHB</option>
+                                    <option id="14">SDHC</option>
+                                    <option id="15">SDHD</option>
+                                    <option id="16">VHL</option>
+                                    <option id="17">Annan gen</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group" id="gen5" style="display:none">
+                            <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">MLH1</option>
+                                    <option id="2">MSH2</option>
+                                    <option id="3">MSH6</option>
+                                    <option id="4">PMS2</option>
+                                    <option id="5">MUTYH</option>
+                                    <option id="6">APC</option>
+                                    <option id="7">SMAD3</option>
+                                    <option id="8">STK11</option>
+                                    <option id="9">BRCA1</option>
+                                    <option id="10">BRCA2</option>
+                                    <option id="11">PALB2</option>
+                                    <option id="12">FLCN</option>
+                                    <option id="13">SDHB</option>
+                                    <option id="14">SDHC</option>
+                                    <option id="15">SDHD</option>
+                                    <option id="16">VHL</option>
+                                    <option id="17">Annan gen</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group" id="gen6" style="display:none">
+                            <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">MLH1</option>
+                                    <option id="2">MSH2</option>
+                                    <option id="3">MSH6</option>
+                                    <option id="4">PMS2</option>
+                                    <option id="5">MUTYH</option>
+                                    <option id="6">APC</option>
+                                    <option id="7">SMAD3</option>
+                                    <option id="8">STK11</option>
+                                    <option id="9">BRCA1</option>
+                                    <option id="10">BRCA2</option>
+                                    <option id="11">PALB2</option>
+                                    <option id="12">FLCN</option>
+                                    <option id="13">SDHB</option>
+                                    <option id="14">SDHC</option>
+                                    <option id="15">SDHD</option>
+                                    <option id="16">VHL</option>
+                                    <option id="17">Annan gen</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br />
+                       
+                    <div id="datumlab" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Datum då analys beställts</label>
+                            <div class="col-xs-3">
+                                <input type="date" class="form-control" placeholder="yy-mm-dd" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Datum för svar på laborativ analys</label>
+                            <div class="col-xs-3">
+                                <input type="date" class="form-control" placeholder="yy-mm-dd" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Datum då svaret på laborativ analys kommunicerades till individen/familjen</label>
+                            <div class="col-xs-3">
+                                <input type="date" class="form-control" placeholder="yy-mm-dd" />
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+          
+    <div class="panel panel-default center-block" style="width:70%">
+                <div class="panel panel-default panel-heading panel-title">Canceranamnes</div>
+                <div class="panel panel-body">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Egen uppgiven cancerdiagnos</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="egencancer" onchange="canin()">
+                                <option id="0">--Välj--</option>
+                                <option id="1">Nej</option>
+                                <option id="2">Ja</option>
+                                <option id="3">Inget värde i CanInca</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="caninca" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Cancerdiagnos</label>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" placeholder="Hämtas från CanInca" disabled />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Ålder vid diagnos</label>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" placeholder="Hämtas från CanInca" disabled />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cancer" style="display:none">
+                    <div class="row form-group" >
+                        <label class="control-label col-sm-3">Ålder vid diagnos</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    
+                        <div class="h5"><b>Organ</b></div>
+                        <hr />
+                        <div class="row form-group" >
+                            <label class="control-label col-sm-3">Ventrikel</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="egenventr" onchange="ventrikelcheck()"/>
+                            </div>
+                        </div>
+                        <div id="eventrikel" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control"  />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group" >
+                            <label class="control-label col-sm-3">Kolon/Rektum</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="kolon" onchange="koloncheck()"/>
+                            </div>
+                        </div>
+                        <div id="colon" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group" >
+                            <label class="control-label col-sm-3">Annan magtarmkanal</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="magtarm" onchange="magtarmcheck()" />
+                            </div>
+                        </div>
+                        <div id="magtarmkanal" style="display:none">
+                            <div class="row form-group" >
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group" >
+                            <label class="control-label col-sm-3">Bröst</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="bros" onchange="brostcheck()"/>
+                            </div>
+                        </div>
+                        <div id="brost" style="display:none">
+                            <div class="row form-group" >
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Livmoder</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="livm" onchange="livmodercheck()" />
+                            </div>
+                        </div>
+                        <div id="livmoder" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Livmoderhals</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="livmhals" onchange="livmoderhalscheck()" />
+                            </div>
+                        </div>
+                        <div id="livmoderhals" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Ovarium</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="ovar" onchange="ovariumcheck()"/>
+                            </div>
+                        </div>
+                        <div id="ovarium" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group" >
+                            <label class="control-label col-sm-3">Hjärna</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="hjarn" onchange="hjarnacheck()" />
+                            </div>
+                        </div>
+                        <div id="hjarna" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Malignt melanom</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="melan" onchange="melanomcheck()" />
+                            </div>
+                        </div>
+                        <div id="melanom" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Lever</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="lev" onchange="levercheck()"/>
+                            </div>
+                        </div>
+                        <div id="lever" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Lunga</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="lung" onchange="lungacheck()" />
+                            </div>
+                        </div>
+                        <div id="lunga" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Sarkom</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="sark" onchange="sarkomcheck()" />
+                            </div>
+                        </div>
+                        <div id="sarkom" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Leukemi</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="leuk" onchange="leukemicheck()" />
+                            </div>
+                        </div>
+                        <div id="leukemi" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Lymfom</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="lymf" onchange="lymfomcheck()"/>
+                            </div>
+                        </div>
+                        <div id="lymfom" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Annat</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" id="anndia" onchange="annatdiacheck()"/>
+                            </div>
+                        </div>
+                        <div id="annatdia" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Specificera
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Cancerdiagnos bekräftad
+                                </label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">
+                                    Ålder vid diagnos
+                                </label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                    </div>
+
+                </div>
+            </div>
+    <div class="panel panel-default center-block" style="width:70%">
+                <div class="panel panel-default panel-heading panel-title">Kontroller</div>
+                <div class="panel panel-body">
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Kontrollprogram rekommenderas</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="kontr" onchange="kontrollprog()">
+                                <option id="0">--Välj</option>
+                                <option id="1">Ja, specialdesignat</option>
+                                <option id="2">Populationsscreeningprogram</option>
+                                <option id="3">Nej</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="kontroll" style="display:none">
+                        
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Colon</label>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="colonkontroll" onchange="interv()">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">Nej</option>
+                                    <option id="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="colonkoll" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Startålder</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Bröst</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">Nej</option>
+                                    <option id="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Ovarier</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">Nej</option>
+                                    <option id="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Livmoder</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">Nej</option>
+                                    <option id="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Ventrikel</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">Nej</option>
+                                    <option id="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Endokrina</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">Nej</option>
+                                    <option id="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Hud</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">Nej</option>
+                                    <option id="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Njurar</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">Nej</option>
+                                    <option id="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Pancreas</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">Nej</option>
+                                    <option id="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Övriga</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">Nej</option>
+                                    <option id="2">Ja</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+</body>
+</html>
