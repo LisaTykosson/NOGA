@@ -495,3 +495,11 @@ function programvari() {
         document.getElementById("padkolon").style.display = "none";
     }
 }
+function tidigoperation() {
+    if (document.getElementById("tidop").selectedIndex == "2") {
+        document.getElementById("tidopererad").style.display = "block";
+    }
+    else {
+        document.getElementById("tidopererad").style.display = "none";
+    }
+}
