@@ -256,11 +256,23 @@
                 <div class="row form-group">
                         <label class="control-label col-sm-3">Fynd</label>
                         <div class="col-xs-3">
-                            <select class="form-control">
+                            <select class="form-control" id="fyndundersok" onchange="fyndvidareatg()">
                                 <option id="0">--Välj--</option>
                                 <option id="1">Normal</option>
                                 <option id="2">Föranleder vidare undersökning</option>
                                 <option id="3">Ingen vidare åtgärd i dagsläget</option>
+                            </select>
+                        </div>
+                    </div>
+                      <div class="row form-group" id="vidareundersokning" style="display:none">
+                        <label class="control-label col-sm-3">Åtgärd</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option id="0">--Välj--</option>
+                                <option id="1">Biopsi</option>
+                                <option id="2">Vidare kontroll</option>
+                                <option id="3">Operation</option>
+                                <option id="4">Expektans</option>
                             </select>
                         </div>
                     </div>
