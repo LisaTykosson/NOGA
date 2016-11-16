@@ -151,7 +151,7 @@
                 <div class="row form-group">
                     <label class="control-label col-sm-3">Tidigare operation</label>
                     <div class="col-xs-3">
-                        <select class="form-control">
+                        <select class="form-control" id="tidop" onchange="tidigoperation()">
                             <option id="0">--Välj--</option>
                             <option id="1">Nej</option>
                             <option id="2">Ja</option>
@@ -172,6 +172,12 @@
             </div>
         </div>
     </div>
+     <div class="panel panel-default center-block" style="width:70%;display:none" id="tidopererad">
+        <div class="panel panel-default panel-heading panel-title">Tidigare operation</div>
+        <div class="panel panel-body">
+
+            </div>
+        </div>
     <div class="panel panel-default center-block" style="width:70%;display:none" id="patientkolon">
         <div class="panel panel-default panel-heading panel-title">Patientuppgifter</div>
         <div class="panel panel-body">
