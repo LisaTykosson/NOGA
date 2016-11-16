@@ -172,37 +172,248 @@
             </div>
         </div>
     </div>
-     <div class="panel panel-default center-block" style="width:70%;display:none" id="tidopererad">
-        <div class="panel panel-default panel-heading panel-title">Tidigare operation</div>
-        <div class="panel panel-body">
-<div class="row form-group">
-                    <label class="control-label col-sm-3">Orsak</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option id="0">--Lista?--</option>
+         <div class="panel panel-default center-block" style="width:70%;display:none" id="tidopererad">
+            <div class="panel panel-default panel-heading panel-title">Tidigare operation</div>
+            <div class="panel panel-body">
+            <div class="row form-group">
+                        <label class="control-label col-sm-3">Orsak</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option id="0">--Organspecifik lista--</option>
 
-                        </select>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Typ av operation</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option id="0">--Lista?--</option>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Typ av operation</label>
+                        <div class="col-xs-3">
+                            <select class="form-control">
+                                <option id="0">--Organspecifik lista--</option>
 
-                        </select>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Datum</label>
-                    <div class="col-xs-3">
-                        <input type="text" class="form-control" />
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Datum</label>
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-            </div>
-        </div>
+              
+  <div class="panel panel-default center-block" style="width:70%;display:none" id="rtgkolon">
+            <div class="panel panel-default panel-heading panel-title">Röntgen</div>
+            <div class="panel panel-body">
+                   <div class="row form-group">
+                        <label class="control-label col-sm-3">Röntgen</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="rtg" onchange="visartg()">
+                                <option id="0">--Välj--</option>
+                                <option id="1">Nej</option>
+                                <option id="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                <div id="undersokningarrtg" style="display:none">
+             <div class="row form-group">
+                            <label class="control-label col-sm-3">MRT Lilla bäckenet</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+             <div class="row form-group">
+                            <label class="control-label col-sm-3">MRT Lever</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>   
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">DT Thorax buk</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">DT Buk</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">DT Kolon</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">DT Thorax</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                </div>
+      </div>
+    </div>
+      <div class="panel panel-default center-block" style="width:70%;display:none" id="endkolon">
+            <div class="panel panel-default panel-heading panel-title">Endoskopi</div>
+            <div class="panel panel-body">
+                   <div class="row form-group">
+                        <label class="control-label col-sm-3">Endoskopi</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="endo" onchange="visaendo()">
+                                <option id="0">--Välj--</option>
+                                <option id="1">Nej</option>
+                                <option id="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                <div id="undersokningarendo" style="display:none">
+             <div class="row form-group">
+                            <label class="control-label col-sm-3">Lämpliga</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+             <div class="row form-group">
+                            <label class="control-label col-sm-3">Undersökningar</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>   
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">Visas</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">Här</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">Per</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">Organ</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                </div>
+      </div>
+    </div>     
+         <div class="panel panel-default center-block" style="width:70%;display:none" id="ulkolon">
+            <div class="panel panel-default panel-heading panel-title">Ultrljud</div>
+            <div class="panel panel-body">
+                   <div class="row form-group">
+                        <label class="control-label col-sm-3">Endoskopi</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="ul" onchange="visaul()">
+                                <option id="0">--Välj--</option>
+                                <option id="1">Nej</option>
+                                <option id="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                <div id="undersokningarul" style="display:none">
+             <div class="row form-group">
+                            <label class="control-label col-sm-3">Lämpliga</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+             <div class="row form-group">
+                            <label class="control-label col-sm-3">Undersökningar</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>   
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">Visas</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">Här</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">Per</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">Organ</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                </div>
+      </div>
+    </div> 
+         <div class="panel panel-default center-block" style="width:70%;display:none" id="biopkolon">
+            <div class="panel panel-default panel-heading panel-title">Ultrljud</div>
+            <div class="panel panel-body">
+                   <div class="row form-group">
+                        <label class="control-label col-sm-3">Biopsi</label>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="biop" onchange="visabiop()">
+                                <option id="0">--Välj--</option>
+                                <option id="1">Nej</option>
+                                <option id="2">Ja</option>
+                            </select>
+                        </div>
+                    </div>
+                <div id="undersokningarbiop" style="display:none">
+             <div class="row form-group">
+                            <label class="control-label col-sm-3">Lämpliga</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+             <div class="row form-group">
+                            <label class="control-label col-sm-3">Förslag</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div>   
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">Visas</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">Här</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">Per</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                <div class="row form-group">
+                            <label class="control-label col-sm-3">Organ</label>
+                            <div class="col-xs-3">
+                                <input type="checkbox" />
+                            </div>
+                        </div> 
+                </div>
+      </div>
+    </div> 
     <div class="panel panel-default center-block" style="width:70%;display:none" id="patientkolon">
         <div class="panel panel-default panel-heading panel-title">Patientuppgifter</div>
         <div class="panel panel-body">
@@ -234,42 +445,7 @@
                     <input type="text" class="form-control" placeholder="ska detta vara en lista?"/>
                 </div>
             </div>
-            <div class="row form-group" style="display:none">
-                <label class="control-label col-sm-3">Har patienten genomgått en profylaktisk operation?</label>
-                <div class="col-xs-3">
-                    <select class="form-control" id="prof" onchange="profop()">
-                        <option id="0">--Välj--</option>
-                        <option id="1">Nej</option>
-                        <option id="2">Ja</option>
-                    </select>
-                </div>
-            </div>
-            <div id="profylop" style="display:none">
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Orsak</label>
-                    <div class="col-xs-3">
-                        <select class="form-control" >
-                            <option id="0">--Lista?--</option>
-                            
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Typ av operation</label>
-                    <div class="col-xs-3">
-                        <select class="form-control">
-                            <option id="0">--Lista?--</option>
-
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-3">Datum</label>
-                    <div class="col-xs-3">
-                        <input type="text" class="form-control" />
-                    </div>
-                </div>
-            </div>
+            
             <div class="row form-group">
                 <label class="control-label col-sm-3">Fynd av polyper/cancer</label>
                 <div class="col-xs-3">
