@@ -47,8 +47,6 @@
                     <input type="text" class="form-control" placeholder="2016-10-03" disabled />
                 </div>
             </div>
-          
-           
         </div>
     </div>
     <div class="panel panel-default center-block" style="width:70%">
@@ -72,7 +70,7 @@
                 </div>
             </div>
             <div class="row form-group">
-                <label class="control-label col-sm-3">Datum för bedömning</label>
+                <label class="control-label col-sm-3">Datum för kontakt</label>
                 <div class="col-xs-3">
                     <input type="text" class="form-control" />
                 </div>
@@ -80,7 +78,7 @@
             <div class="row form-group">
                 <label class="control-label col-sm-3">Typ av kontakt</label>
                 <div class="col-xs-3">
-                    <select class="form-control" id="besok">
+                    <select class="form-control" >
                         <option id="0">--Välj--</option>
                         <option id="1">Brev</option>
                         <option id="2">Telefon</option>
@@ -88,13 +86,6 @@
                         </select>
                 </div>
             </div>
-            <div class="row form-group" id="typkontakt" style="display:none">
-                <label class="control-label col-sm-3">Datum för kontakt</label>
-                <div class="col-xs-3">
-                    <input type="text" class="form-control" />
-                </div>
-            </div>
-        
             </div>
         </div>
     <div class="panel panel-default center-block" style="width:70%">
@@ -104,16 +95,6 @@
                         <label class="control-label col-sm-3">Är individen indexperson i famlijen?</label>
                         <div class="col-xs-3">
                             <select class="form-control" >
-                                <option id="0">--Välj--</option>
-                                <option id="1">Nej</option>
-                                <option id="2">Ja</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label class="control-label col-sm-3">Uppfyller familjen/individen kriterier för mutationsscreening?</label>
-                        <div class="col-xs-3">
-                            <select class="form-control">
                                 <option id="0">--Välj--</option>
                                 <option id="1">Nej</option>
                                 <option id="2">Ja</option>
@@ -131,7 +112,7 @@
                         </div>
                         </div>
                         <div class="row form-group">
-                            <label class="control-label col-sm-3">Har kliniskt relevant mutation påvisats?</label>
+                            <label class="control-label col-sm-3">Har kliniskt relevant mutation påvisats på individen?</label>
                             <div class="col-xs-3">
                                 <select class="form-control" id="utmsi" onchange="mut()">
                                     <option id="0">--Välj--</option>
@@ -140,6 +121,27 @@
                                 </select>
                             </div>
                         </div>
+
+                    <div id="datumlab" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Datum då analys beställts</label>
+                            <div class="col-xs-3">
+                                <input type="date" class="form-control" placeholder="yy-mm-dd" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Datum för svar på laborativ analys</label>
+                            <div class="col-xs-3">
+                                <input type="date" class="form-control" placeholder="yy-mm-dd" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Datum då svaret på laborativ analys kommunicerades till individen/familjen</label>
+                            <div class="col-xs-3">
+                                <input type="date" class="form-control" placeholder="yy-mm-dd" />
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="row form-group">
                         <label class="control-label col-sm-3">Har genetisk utredning gjorts på individen?</label>
@@ -165,7 +167,7 @@
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label class="control-label col-sm-3">Analys av  MSI/IHC på individ/familjemedlem</label>
+                        <label class="control-label col-sm-3">Har andra laborativa analyser gjorts, för att utesluta Lynchs syndrom, hos individen eller familjemedlemmar (MSI/IHC)</label>
                         <div class="col-xs-3">
                             <select class="form-control">
                                 <option id="0">--Välj--</option>
@@ -178,90 +180,51 @@
                     
                     <div id="screenind" style="display:none">
                             <div class="row form-group">
-                                <label class="control-label col-sm-3">Antal gener som påvisat mutation</label>
+                                <label class="control-label col-sm-3">Gen som påvisat mutation</label>
                                 <div class="col-xs-3">
-                                    <select class="form-control" id="mutationer" onchange="antalgen()">
+                                    <select class="form-control" id="genlista1" onchange="baspar()">
                                         <option id="0">--Välj--</option>
-                                        <option id="1">0</option>
-                                        <option id="2">1</option>
-                                        <option id="3">2</option>
-                                        <option id="4">3</option>
-                                        <option id="5">4</option>
-                                        <option id="6">5</option>
-                                        <option id="7">6</option>
+                                        <option id="1">MLH1</option>
+                                        <option id="2">MSH2</option>
+                                        <option id="3">MSH6</option>
+                                        <option id="4">PMS2</option>
+                                        <option id="5">MUTYH</option>
+                                        <option id="6">APC</option>
+                                        <option id="7">SMAD3</option>
+                                        <option id="8">STK11</option>
+                                        <option id="9">BRCA1</option>
+                                        <option id="10">BRCA2</option>
+                                        <option id="11">PALB2</option>
+                                        <option id="12">FLCN</option>
+                                        <option id="13">SDHB</option>
+                                        <option id="14">SDHC</option>
+                                        <option id="15">SDHD</option>
+                                        <option id="16">VHL</option>
                                     </select>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="row form-group" id="gen1" style="display:none">
-                            <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
-                            <div class="col-xs-3">
-                                <select class="form-control" id="genlista1" onchange="baspar()">
-                                    <option id="0">--Välj--</option>
-                                    <option id="1">MLH1</option>
-                                    <option id="2">MSH2</option>
-                                    <option id="3">MSH6</option>
-                                    <option id="4">PMS2</option>
-                                    <option id="5">MUTYH</option>
-                                    <option id="6">APC</option>
-                                    <option id="7">SMAD3</option>
-                                    <option id="8">STK11</option>
-                                    <option id="9">BRCA1</option>
-                                    <option id="10">BRCA2</option>
-                                    <option id="11">PALB2</option>
-                                    <option id="12">FLCN</option>
-                                    <option id="13">SDHB</option>
-                                    <option id="14">SDHC</option>
-                                    <option id="15">SDHD</option>
-                                    <option id="16">VHL</option>
-                                    <option id="17">Annan gen</option>
-                                </select>
                             </div>
                         </div>
                         <div id="mlh1" style="display:none">
 
                             <div class="row form-group">
-                                <label class="control-label col-sm-3">Basparsförändring MLH1</label>
+                                <label class="control-label col-sm-3">Basparsförändring </label>
                                 <div class="col-xs-3">
                                     <input type="text" class="form-control" />
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <label class="control-label col-sm-3">Proteinförändring MLH1</label>
+                                <label class="control-label col-sm-3">Ytterligare gen</label>
                                 <div class="col-xs-3">
-                                    <input type="text" class="form-control" />
+                                    <select class="form-control" id="mergener" onchange="yttgen()">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Nej</option>
+                                        <option id="2">Ja</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="row form-group">
-                                <label class="control-label col-sm-3">Referenssekvens</label>
-                                <div class="col-xs-3">
-                                    <input type="text" class="form-control" />
-                                </div>
                             </div>
-                            </div>
-                     
-                        <div id="brca1" style="display:none">
-                            <div class="row form-group">
-                                <label class="control-label col-sm-3">Basparsförändring BRCA1</label>
-                                <div class="col-xs-3">
-                                    <input type="text" class="form-control" />
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="control-label col-sm-3">Proteinförändring BRCA1</label>
-                                <div class="col-xs-3">
-                                    <input type="text" class="form-control" />
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="control-label col-sm-3">Referenssekvens</label>
-                                <div class="col-xs-3">
-                                    <input type="text" class="form-control" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row form-group" id="gen2" style="display:none">
+                    <div id="gen2" style="display:none">
+                        <div class="row form-group" >
                             <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
                             <div class="col-xs-3">
                                 <select class="form-control" id="genlista2" onchange="protein()">
@@ -285,22 +248,61 @@
                                     <option id="17">Annan gen</option>
                                 </select>
                             </div>
-                        </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">MLH1</option>
+                                        <option id="2">MSH2</option>
+                                        <option id="3">MSH6</option>
+                                        <option id="4">PMS2</option>
+                                        <option id="5">MUTYH</option>
+                                        <option id="6">APC</option>
+                                        <option id="7">SMAD3</option>
+                                        <option id="8">STK11</option>
+                                        <option id="9">BRCA1</option>
+                                        <option id="10">BRCA2</option>
+                                        <option id="11">PALB2</option>
+                                        <option id="12">FLCN</option>
+                                        <option id="13">SDHB</option>
+                                        <option id="14">SDHC</option>
+                                        <option id="15">SDHD</option>
+                                        <option id="16">VHL</option>
+                                        <option id="17">Annan gen</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">MLH1</option>
+                                        <option id="2">MSH2</option>
+                                        <option id="3">MSH6</option>
+                                        <option id="4">PMS2</option>
+                                        <option id="5">MUTYH</option>
+                                        <option id="6">APC</option>
+                                        <option id="7">SMAD3</option>
+                                        <option id="8">STK11</option>
+                                        <option id="9">BRCA1</option>
+                                        <option id="10">BRCA2</option>
+                                        <option id="11">PALB2</option>
+                                        <option id="12">FLCN</option>
+                                        <option id="13">SDHB</option>
+                                        <option id="14">SDHC</option>
+                                        <option id="15">SDHD</option>
+                                        <option id="16">VHL</option>
+                                        <option id="17">Annan gen</option>
+                                    </select>
+                                </div>
+                            </div>
+                    </div>
                         <div id="pms2" style="display:none">
                             <div class="row form-group">
-                                <label class="control-label col-sm-3">Basparsförändring PMS2</label>
-                                <div class="col-xs-3">
-                                    <input type="text" class="form-control" />
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="control-label col-sm-3">Proteinförändring PMS2</label>
-                                <div class="col-xs-3">
-                                    <input type="text" class="form-control" />
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="control-label col-sm-3">Referenssekvens</label>
+                                <label class="control-label col-sm-3">Basparsförändring</label>
                                 <div class="col-xs-3">
                                     <input type="text" class="form-control" />
                                 </div>
@@ -308,146 +310,14 @@
                         </div>
                         <div id="brca2" style="display:none">
                             <div class="row form-group">
-                                <label class="control-label col-sm-3">Basparsförändring BRCA2</label>
+                                <label class="control-label col-sm-3">Basparsförändring</label>
                                 <div class="col-xs-3">
                                     <input type="text" class="form-control" />
                                 </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="control-label col-sm-3">Proteinförändring BRCA2</label>
-                                <div class="col-xs-3">
-                                    <input type="text" class="form-control" />
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="control-label col-sm-3">Referenssekvens</label>
-                                <div class="col-xs-3">
-                                    <input type="text" class="form-control" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row form-group" id="gen3" style="display:none">
-                            <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
-                            <div class="col-xs-3">
-                                <select class="form-control">
-                                    <option id="0">--Välj--</option>
-                                    <option id="1">MLH1</option>
-                                    <option id="2">MSH2</option>
-                                    <option id="3">MSH6</option>
-                                    <option id="4">PMS2</option>
-                                    <option id="5">MUTYH</option>
-                                    <option id="6">APC</option>
-                                    <option id="7">SMAD3</option>
-                                    <option id="8">STK11</option>
-                                    <option id="9">BRCA1</option>
-                                    <option id="10">BRCA2</option>
-                                    <option id="11">PALB2</option>
-                                    <option id="12">FLCN</option>
-                                    <option id="13">SDHB</option>
-                                    <option id="14">SDHC</option>
-                                    <option id="15">SDHD</option>
-                                    <option id="16">VHL</option>
-                                    <option id="17">Annan gen</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row form-group" id="gen4" style="display:none">
-                            <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
-                            <div class="col-xs-3">
-                                <select class="form-control">
-                                    <option id="0">--Välj--</option>
-                                    <option id="1">MLH1</option>
-                                    <option id="2">MSH2</option>
-                                    <option id="3">MSH6</option>
-                                    <option id="4">PMS2</option>
-                                    <option id="5">MUTYH</option>
-                                    <option id="6">APC</option>
-                                    <option id="7">SMAD3</option>
-                                    <option id="8">STK11</option>
-                                    <option id="9">BRCA1</option>
-                                    <option id="10">BRCA2</option>
-                                    <option id="11">PALB2</option>
-                                    <option id="12">FLCN</option>
-                                    <option id="13">SDHB</option>
-                                    <option id="14">SDHC</option>
-                                    <option id="15">SDHD</option>
-                                    <option id="16">VHL</option>
-                                    <option id="17">Annan gen</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row form-group" id="gen5" style="display:none">
-                            <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
-                            <div class="col-xs-3">
-                                <select class="form-control">
-                                    <option id="0">--Välj--</option>
-                                    <option id="1">MLH1</option>
-                                    <option id="2">MSH2</option>
-                                    <option id="3">MSH6</option>
-                                    <option id="4">PMS2</option>
-                                    <option id="5">MUTYH</option>
-                                    <option id="6">APC</option>
-                                    <option id="7">SMAD3</option>
-                                    <option id="8">STK11</option>
-                                    <option id="9">BRCA1</option>
-                                    <option id="10">BRCA2</option>
-                                    <option id="11">PALB2</option>
-                                    <option id="12">FLCN</option>
-                                    <option id="13">SDHB</option>
-                                    <option id="14">SDHC</option>
-                                    <option id="15">SDHD</option>
-                                    <option id="16">VHL</option>
-                                    <option id="17">Annan gen</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row form-group" id="gen6" style="display:none">
-                            <label class="control-label col-sm-3">Vilken gen har påvisats mutation i?</label>
-                            <div class="col-xs-3">
-                                <select class="form-control">
-                                    <option id="0">--Välj--</option>
-                                    <option id="1">MLH1</option>
-                                    <option id="2">MSH2</option>
-                                    <option id="3">MSH6</option>
-                                    <option id="4">PMS2</option>
-                                    <option id="5">MUTYH</option>
-                                    <option id="6">APC</option>
-                                    <option id="7">SMAD3</option>
-                                    <option id="8">STK11</option>
-                                    <option id="9">BRCA1</option>
-                                    <option id="10">BRCA2</option>
-                                    <option id="11">PALB2</option>
-                                    <option id="12">FLCN</option>
-                                    <option id="13">SDHB</option>
-                                    <option id="14">SDHC</option>
-                                    <option id="15">SDHD</option>
-                                    <option id="16">VHL</option>
-                                    <option id="17">Annan gen</option>
-                                </select>
                             </div>
                         </div>
                         <br />
-                       
-                    <div id="datumlab" style="display:none">
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Datum då analys beställts</label>
-                            <div class="col-xs-3">
-                                <input type="date" class="form-control" placeholder="yy-mm-dd" />
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Datum för svar på laborativ analys</label>
-                            <div class="col-xs-3">
-                                <input type="date" class="form-control" placeholder="yy-mm-dd" />
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Datum då svaret på laborativ analys kommunicerades till individen/familjen</label>
-                            <div class="col-xs-3">
-                                <input type="date" class="form-control" placeholder="yy-mm-dd" />
-                            </div>
-                        </div>
-                    </div>
+                
                     </div>
                 </div>
           
@@ -460,8 +330,8 @@
                             <select class="form-control" id="egencancer" onchange="canin()">
                                 <option id="0">--Välj--</option>
                                 <option id="1">Nej</option>
-                                <option id="2">Ja</option>
-                                <option id="3">Inget värde i CanInca</option>
+                                <option id="2">Ja, diagnos i Sverige</option>
+                                <option id="3">Ja, diagnos utomlands</option>
                             </select>
                         </div>
                     </div>
@@ -472,12 +342,7 @@
                                 <input type="text" class="form-control" placeholder="Hämtas från CanInca" disabled />
                             </div>
                         </div>
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Ålder vid diagnos</label>
-                            <div class="col-xs-3">
-                                <input type="text" class="form-control" placeholder="Hämtas från CanInca" disabled />
-                            </div>
-                        </div>
+                      
                     </div>
                     <div id="cancer" style="display:none">
                     <div class="row form-group" >
@@ -926,16 +791,31 @@
                 <div class="panel panel-default panel-heading panel-title">Kontroller</div>
                 <div class="panel panel-body">
                     <div class="row form-group">
-                        <label class="control-label col-sm-3">Kontrollprogram rekommenderas</label>
+                        <label class="control-label col-sm-3">Kontrollprogram</label>
                         <div class="col-xs-3">
                             <select class="form-control" id="kontr" onchange="kontrollprog()">
                                 <option id="0">--Välj</option>
-                                <option id="1">Ja, specialdesignat</option>
+                                <option id="1">Ja, </option>
                                 <option id="2">Populationsscreeningprogram</option>
                                 <option id="3">Nej</option>
                             </select>
                         </div>
                     </div>
+                    <div id="ingakontroller" style="display:none">
+                        <div class="row form-group">
+                            <label class="control-label col-sm-3">Orsak</label>
+                            <div class="col-xs-3">
+                                <select class="form-control">
+                                    <option id="0">--Välj--</option>
+                                    <option id="1">Patientens önskan</option>
+                                    <option id="2">Komorbiditet</option>
+                                    <option id="3">Hög ålder</option>
+                                    <option id="2">Annan orsak</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
                     <div id="kontroll" style="display:none">
                         
                         <div class="row form-group">
