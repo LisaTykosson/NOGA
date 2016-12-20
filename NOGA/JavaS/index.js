@@ -1,90 +1,4 @@
-﻿function famnr() {
-    if
-                (document.getElementById("familj").selectedIndex == "1") {
-        document.getElementById("familjenr").style.display = "none";
-
-    }
-    else if (
-        document.getElementById("familj").selectedIndex == "2") {
-        document.getElementById("familjenr").style.display = "block";
-
-    }
-    else {
-
-        document.getElementById("familjenr").style.display = "none";
-    }
-
-}
-function umecheck() {
-    if(
-        document.getElementById("umea").checked) {
-        document.getElementById("ume").style.display = "block";
-
-    }
-    else {
-        document.getElementById("ume").style.display = "none";
-    }
-}
-function uppscheck() {
-    if (
-        document.getElementById("uppsa").checked) {
-        document.getElementById("upps").style.display = "block";
-
-    }
-    else {
-        document.getElementById("upps").style.display = "none";
-    }
-}
-function stockcheck() {
-    if (
-        document.getElementById("stockh").checked) {
-        document.getElementById("stock").style.display = "block";
-
-    }
-    else {
-        document.getElementById("stock").style.display = "none";
-    }
-}
-function linkcheck() {
-    if (
-        document.getElementById("linko").checked) {
-        document.getElementById("link").style.display = "block";
-
-    }
-    else {
-        document.getElementById("link").style.display = "none";
-    }
-}
-function gotecheck() {
-    if (
-        document.getElementById("goteb").checked) {
-        document.getElementById("gote").style.display = "block";
-
-    }
-    else {
-        document.getElementById("gote").style.display = "none";
-    }
-}
-function lundcheck() {
-    if (
-        document.getElementById("lund").checked) {
-        document.getElementById("lun").style.display = "block";
-
-    }
-    else {
-        document.getElementById("lun").style.display = "none";
-    }
-}
-function annatcheck() {
-    if (
-        document.getElementById("annat").checked) {
-        document.getElementById("anna").style.display = "block";
-
-    }
-    else {
-        document.getElementById("anna").style.display = "none";
-    }
-}
+﻿
 function labutrind() {
     if 
                 (document.getElementById("labind").selectedIndex == "2") {
@@ -140,89 +54,7 @@ function anlag() {
     }
 
 }
-function antalgen() {
-    if
-                (document.getElementById("mutationer").selectedIndex == "1") {
-        document.getElementById("gen1").style.display = "none";
-        document.getElementById("gen2").style.display = "none";
-        document.getElementById("gen3").style.display = "none";
-        document.getElementById("gen4").style.display = "none";
-        document.getElementById("gen5").style.display = "none";
-        document.getElementById("gen6").style.display = "none";
 
-    }
-    else if (
-        document.getElementById("mutationer").selectedIndex == "2") {
-        document.getElementById("gen1").style.display = "block";
-        document.getElementById("gen2").style.display = "none";
-        document.getElementById("gen3").style.display = "none";
-        document.getElementById("gen4").style.display = "none";
-        document.getElementById("gen5").style.display = "none";
-        document.getElementById("gen6").style.display = "none";
-
-    }
-    else if (
-        document.getElementById("mutationer").selectedIndex == "3") {
-        document.getElementById("gen1").style.display = "block";
-        document.getElementById("gen2").style.display = "block";
-        document.getElementById("gen3").style.display = "none";
-        document.getElementById("gen4").style.display = "none";
-        document.getElementById("gen5").style.display = "none";
-        document.getElementById("gen6").style.display = "none";
-
-    }
-    else if (
-    document.getElementById("mutationer").selectedIndex == "4") {
-        document.getElementById("gen1").style.display = "block";
-        document.getElementById("gen2").style.display = "block";
-        document.getElementById("gen3").style.display = "block";
-        document.getElementById("gen4").style.display = "none";
-        document.getElementById("gen5").style.display = "none";
-        document.getElementById("gen6").style.display = "none";
-
-    }
-    else if (
-    document.getElementById("mutationer").selectedIndex == "5") {
-        document.getElementById("gen1").style.display = "block";
-        document.getElementById("gen2").style.display = "block";
-        document.getElementById("gen3").style.display = "block";
-        document.getElementById("gen4").style.display = "block";
-        document.getElementById("gen5").style.display = "none";
-        document.getElementById("gen6").style.display = "none";
-
-    }
-    else if (
-    document.getElementById("mutationer").selectedIndex == "6") {
-        document.getElementById("gen1").style.display = "block";
-        document.getElementById("gen2").style.display = "block";
-        document.getElementById("gen3").style.display = "block";
-        document.getElementById("gen4").style.display = "block";
-        document.getElementById("gen5").style.display = "block";
-        document.getElementById("gen6").style.display = "none";
-
-    }
-    else if (
-    document.getElementById("mutationer").selectedIndex == "7") {
-        document.getElementById("gen1").style.display = "block";
-        document.getElementById("gen2").style.display = "block";
-        document.getElementById("gen3").style.display = "block";
-        document.getElementById("gen4").style.display = "block";
-        document.getElementById("gen5").style.display = "block";
-        document.getElementById("gen6").style.display = "block";
-
-    }
-
-    else {
-
-        document.getElementById("gen1").style.display = "none";
-        document.getElementById("gen2").style.display = "none";
-        document.getElementById("gen3").style.display = "none";
-        document.getElementById("gen4").style.display = "none";
-        document.getElementById("gen5").style.display = "none";
-        document.getElementById("gen6").style.display = "none";
-    }
-
-}
 function mut() {
    if
         (document.getElementById("utmsi").selectedIndex == "2"  ) {
@@ -232,14 +64,20 @@ function mut() {
     }
   
     else {
-        document.getElementById("screenind").style.display = "none";
-        document.getElementById("gen1").style.display = "none";
+       document.getElementById("screenind").style.display = "none";
+       document.getElementById("datumlab").style.display = "none";
+
+    }
+}
+function yttgen() {
+    if 
+        (document.getElementById("mergener").selectedIndex == "2") {
+        document.getElementById("gen2").style.display = "block";
+        
+    }
+
+    else {
         document.getElementById("gen2").style.display = "none";
-        document.getElementById("gen3").style.display = "none";
-        document.getElementById("gen4").style.display = "none";
-        document.getElementById("gen5").style.display = "none";
-        document.getElementById("gen6").style.display = "none";
-        document.getElementById("datumlab").style.display = "none;"
 
     }
 }
@@ -254,10 +92,13 @@ function baspar() {
     }
     else {
         document.getElementById("mlh1").style.display = "none"
-        document.getElementById("brca1").style.display = "none";
+        document.getElementById("brca1").style.display = "none"
+        document.getElementById("gen2").style.display = "none";
     }
     
 }
+
+
 function protein() {
     if (document.getElementById("genlista2").selectedIndex == "4") {
         document.getElementById("pms2").style.display = "block"
@@ -411,9 +252,16 @@ function annatdiacheck() {
 function kontrollprog() {
     if (document.getElementById("kontr").selectedIndex == "1") {
         document.getElementById("kontroll").style.display = "block";
+        document.getElementById("ingakontroller").style.display = "none";
     }
+    else if (document.getElementById("kontr").selectedIndex == "3") {
+        document.getElementById("ingakontroller").style.display = "block";
+        document.getElementById("kontroll").style.display = "none";
+    }
+    
     else {
         document.getElementById("kontroll").style.display = "none";
+        document.getElementById("ingakontroller").style.display == "none";
     }
 }
 function koloskopikomplik() {
@@ -438,14 +286,6 @@ function indexcol() {
     }
     else {
         document.getElementById("colos").style.display = "block";
-    }
-}
-function besoktyp() {
-    if (document.getElementById("besok").selectedIndex == "2" || document.getElementById("besok").selectedIndex == "1" || document.getElementById("besok").selectedIndex == "3") {
-        document.getElementById("typkontakt").style.display = "block";
-    }
-    else {
-        document.getElementById("typkontakt").style.display = "none";
     }
 }
 function interv() {
@@ -559,5 +399,61 @@ function fyndvidareatg() {
     }
     else {
         document.getElementById("vidareundersokning").style.display = "none";
+    }
+}
+function genscreenfamilj() {
+    if (document.getElementById("genscreenfam").selectedIndex == "2") {
+        document.getElementById("genutfam").style.display = "block";
+    }
+    else {
+        document.getElementById("genutfam").style.display = "none";
+    }
+}
+function avliddat() {
+    if 
+        (document.getElementById("selectbox").selectedIndex == "2") {
+        document.getElementById("datumlab2").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("datumlab2").style.display = "none";
+
+    }
+}
+function klinrelmutation() {
+    if
+        (document.getElementById("klinrelmut").selectedIndex == "2") {
+        document.getElementById("individmut").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("individmut").style.display = "none";
+
+    }
+}
+function lol() {
+    if 
+        (document.getElementById("mutin").selectedIndex == "2") {
+        document.getElementById("screenind").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("screenind").style.display = "none";
+
+    }
+}
+function genscreenindivid() {
+    if
+        (document.getElementById("genetscreenind").selectedIndex == "2") {
+        document.getElementById("pavisadmut").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("pavisadmut").style.display = "none";
+
     }
 }
