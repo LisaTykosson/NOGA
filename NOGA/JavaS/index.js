@@ -1,4 +1,6 @@
-﻿
+﻿$(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
 function labutrind() {
     if 
                 (document.getElementById("labind").selectedIndex == "2") {
@@ -454,6 +456,54 @@ function genscreenindivid() {
 
     else {
         document.getElementById("pavisadmut").style.display = "none";
+
+    }
+}
+function genscreenindivid2() {
+    if 
+        (document.getElementById("genetscreenind2").selectedIndex == "2") {
+        document.getElementById("pavisadmut2").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("pavisadmut2").style.display = "none";
+
+    }
+}
+function visaind() {
+    if
+        (document.getElementById("ingscre").selectedIndex == "2") {
+        document.getElementById("ind").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("ind").style.display = "none";
+
+    }
+}
+function boadicea() {
+    if 
+        (document.getElementById("boadic").selectedIndex == "4") {
+        document.getElementById("boadi").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("boadi").style.display = "none";
+
+    }
+}
+function brost() {
+    if 
+        (document.getElementById("brostko").selectedIndex == "2") {
+        document.getElementById("brostkoll").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("brostkoll").style.display = "none";
 
     }
 }
