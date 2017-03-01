@@ -1121,18 +1121,32 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="row form-group" id="boadi" style="display:none">
-                                <label class="control-label col-sm-3">Risk enligt BOADICEA 3, 4 & 5</label>
-                                <div class="col-xs-3">
-                                    <select class="form-control">
-                                        <option id="0">--Välj--</option>
-                                        <option id="1">< 17%</option>
-                                        <option id="2">17 - 20%</option>
-                                        <option id="3">20 - 25%</option>
-                                        <option id="4">25 - 30%</option>
-                                        <option id="5">> 30%</option>
-                                        <option id="6">Uppgift saknas</option>
-                                    </select>
+                            <div id="boadi" style="display:none" >
+                                <div class="row form-group" >
+                                    <label class="control-label col-sm-3">Risk enligt BOADICEA</label>
+                                    <div class="col-xs-3">
+                                        <select class="form-control">
+                                            <option id="0">--Välj--</option>
+                                            <option id="1">< 17%</option>
+                                            <option id="2">17 - 20%</option>
+                                            <option id="3">20 - 25%</option>
+                                            <option id="4">25 - 30%</option>
+                                            <option id="5">> 30%</option>
+                                            <option id="6">Uppgift saknas</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Risk framräknat med BOADICEA version</label>
+                                    <div class="col-xs-3">
+                                        <select class="form-control">
+                                            <option id="0">--Välj--</option>
+                                            <option id="1">2</option>
+                                            <option id="2">3</option>
+                                            <option id="3">4</option>
+                                            <option id="4">5</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -1160,81 +1174,353 @@
                         <div class="row form-group">
                             <label class="control-label col-sm-3">Ovarier</label>
                             <div class="col-xs-3">
-                                <select class="form-control">
+                                <select class="form-control" id="ovarie" onchange="ovkoll()">
                                     <option id="0">--Välj--</option>
                                     <option id="1">Nej</option>
                                     <option id="2">Ja</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="container-fluid" id="ovariekoll" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Anledning till kontroller</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Patienten har en mutation</option>
+                                        <option id="2">Påvisad mutation i familjen och invdividen vill ej testa sig</option>
+                                        <option id="3">Hög livstidsrik utifrån Pedigree</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Startålder</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Oftare än 6 månader</option>
+                                        <option id="2">6 - 12 månader</option>
+                                        <option id="3">1 - 2 år</option>
+                                        <option id="4">2 - 3 år</option>
+                                        <option id="5">3 - 5 år</option>
+                                        <option id="6">Var femte år</option>
+                                        <option id="7">Mer sällan</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="row form-group">
                             <label class="control-label col-sm-3">Livmoder</label>
                             <div class="col-xs-3">
-                                <select class="form-control">
+                                <select class="form-control" id="livmod" onchange="livmokoll()">
                                     <option id="0">--Välj--</option>
                                     <option id="1">Nej</option>
                                     <option id="2">Ja</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="container-fluid" id="livkoll" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Anledning till kontroller</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Patienten har en mutation</option>
+                                        <option id="2">Påvisad mutation i familjen och invdividen vill ej testa sig</option>
+                                        <option id="3">Hög livstidsrik utifrån Pedigree</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Startålder</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Oftare än 6 månader</option>
+                                        <option id="2">6 - 12 månader</option>
+                                        <option id="3">1 - 2 år</option>
+                                        <option id="4">2 - 3 år</option>
+                                        <option id="5">3 - 5 år</option>
+                                        <option id="6">Var femte år</option>
+                                        <option id="7">Mer sällan</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="row form-group">
                             <label class="control-label col-sm-3">Ventrikel</label>
                             <div class="col-xs-3">
-                                <select class="form-control">
+                                <select class="form-control" id="vent" onchange="ventrkoll()">
                                     <option id="0">--Välj--</option>
                                     <option id="1">Nej</option>
                                     <option id="2">Ja</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="container-fluid" id="ventkoll" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Anledning till kontroller</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Patienten har en mutation</option>
+                                        <option id="2">Påvisad mutation i familjen och invdividen vill ej testa sig</option>
+                                        <option id="3">Hög livstidsrik utifrån Pedigree</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Startålder</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Oftare än 6 månader</option>
+                                        <option id="2">6 - 12 månader</option>
+                                        <option id="3">1 - 2 år</option>
+                                        <option id="4">2 - 3 år</option>
+                                        <option id="5">3 - 5 år</option>
+                                        <option id="6">Var femte år</option>
+                                        <option id="7">Mer sällan</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="row form-group">
                             <label class="control-label col-sm-3">Endokrina</label>
                             <div class="col-xs-3">
-                                <select class="form-control">
+                                <select class="form-control" id="endo" onchange="endokoll()">
                                     <option id="0">--Välj--</option>
                                     <option id="1">Nej</option>
                                     <option id="2">Ja</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="container-fluid" id="endkoll" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Anledning till kontroller</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Patienten har en mutation</option>
+                                        <option id="2">Påvisad mutation i familjen och invdividen vill ej testa sig</option>
+                                        <option id="3">Hög livstidsrik utifrån Pedigree</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Startålder</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Oftare än 6 månader</option>
+                                        <option id="2">6 - 12 månader</option>
+                                        <option id="3">1 - 2 år</option>
+                                        <option id="4">2 - 3 år</option>
+                                        <option id="5">3 - 5 år</option>
+                                        <option id="6">Var femte år</option>
+                                        <option id="7">Mer sällan</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="row form-group">
                             <label class="control-label col-sm-3">Hud</label>
                             <div class="col-xs-3">
-                                <select class="form-control">
+                                <select class="form-control" id="hud" onchange="hudkoll()">
                                     <option id="0">--Välj--</option>
                                     <option id="1">Nej</option>
                                     <option id="2">Ja</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="container-fluid" id="hudkollar" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Anledning till kontroller</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Patienten har en mutation</option>
+                                        <option id="2">Påvisad mutation i familjen och invdividen vill ej testa sig</option>
+                                        <option id="3">Hög livstidsrik utifrån Pedigree</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Startålder</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Oftare än 6 månader</option>
+                                        <option id="2">6 - 12 månader</option>
+                                        <option id="3">1 - 2 år</option>
+                                        <option id="4">2 - 3 år</option>
+                                        <option id="5">3 - 5 år</option>
+                                        <option id="6">Var femte år</option>
+                                        <option id="7">Mer sällan</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="row form-group">
                             <label class="control-label col-sm-3">Njurar</label>
                             <div class="col-xs-3">
-                                <select class="form-control">
+                                <select class="form-control" id="njur" onchange="njurkoll()">
                                     <option id="0">--Välj--</option>
                                     <option id="1">Nej</option>
                                     <option id="2">Ja</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="container-fluid" id="njurarkoll" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Anledning till kontroller</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Patienten har en mutation</option>
+                                        <option id="2">Påvisad mutation i familjen och invdividen vill ej testa sig</option>
+                                        <option id="3">Hög livstidsrik utifrån Pedigree</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Startålder</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Oftare än 6 månader</option>
+                                        <option id="2">6 - 12 månader</option>
+                                        <option id="3">1 - 2 år</option>
+                                        <option id="4">2 - 3 år</option>
+                                        <option id="5">3 - 5 år</option>
+                                        <option id="6">Var femte år</option>
+                                        <option id="7">Mer sällan</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="row form-group">
                             <label class="control-label col-sm-3">Pancreas</label>
                             <div class="col-xs-3">
-                                <select class="form-control">
+                                <select class="form-control" id="pancreas" onchange="panckoll()">
                                     <option id="0">--Välj--</option>
                                     <option id="1">Nej</option>
                                     <option id="2">Ja</option>
                                 </select>
                             </div>
                         </div>
+                        <div class="container-fluid" id="pkoll" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Anledning till kontroller</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Patienten har en mutation</option>
+                                        <option id="2">Påvisad mutation i familjen och invdividen vill ej testa sig</option>
+                                        <option id="3">Hög livstidsrik utifrån Pedigree</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Startålder</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Oftare än 6 månader</option>
+                                        <option id="2">6 - 12 månader</option>
+                                        <option id="3">1 - 2 år</option>
+                                        <option id="4">2 - 3 år</option>
+                                        <option id="5">3 - 5 år</option>
+                                        <option id="6">Var femte år</option>
+                                        <option id="7">Mer sällan</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row form-group">
                             <label class="control-label col-sm-3">Övriga</label>
                             <div class="col-xs-3">
-                                <select class="form-control">
+                                <select class="form-control" id="ovr" onchange="ovirgakollar()">
                                     <option id="0">--Välj--</option>
                                     <option id="1">Nej</option>
                                     <option id="2">Ja</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="container-fluid" id="okoll" style="display:none">
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Anledning till kontroller</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Patienten har en mutation</option>
+                                        <option id="2">Påvisad mutation i familjen och invdividen vill ej testa sig</option>
+                                        <option id="3">Hög livstidsrik utifrån Pedigree</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Startålder</label>
+                                <div class="col-xs-3">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <div class="col-xs-3">
+                                    <select class="form-control">
+                                        <option id="0">--Välj--</option>
+                                        <option id="1">Oftare än 6 månader</option>
+                                        <option id="2">6 - 12 månader</option>
+                                        <option id="3">1 - 2 år</option>
+                                        <option id="4">2 - 3 år</option>
+                                        <option id="5">3 - 5 år</option>
+                                        <option id="6">Var femte år</option>
+                                        <option id="7">Mer sällan</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
