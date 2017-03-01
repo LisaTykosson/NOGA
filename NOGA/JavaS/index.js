@@ -507,3 +507,99 @@ function brost() {
 
     }
 }
+function ovkoll() {
+    if
+        (document.getElementById("ovarie").selectedIndex == "2") {
+        document.getElementById("ovariekoll").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("ovariekoll").style.display = "none";
+
+    }
+}
+function livmokoll() {
+    if 
+        (document.getElementById("livmod").selectedIndex == "2") {
+        document.getElementById("livkoll").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("livkoll").style.display = "none";
+
+    }
+}
+function ventrkoll() {
+    if
+        (document.getElementById("vent").selectedIndex == "2") {
+        document.getElementById("ventkoll").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("ventkoll").style.display = "none";
+
+    }
+}
+function endokoll() {
+    if 
+        (document.getElementById("endo").selectedIndex == "2") {
+        document.getElementById("endkoll").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("endkoll").style.display = "none";
+
+    }
+}
+function hudkoll() {
+    if
+        (document.getElementById("hud").selectedIndex == "2") {
+        document.getElementById("hudkollar").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("hudkollar").style.display = "none";
+
+    }
+}
+function njurkoll() {
+    if 
+        (document.getElementById("njur").selectedIndex == "2") {
+        document.getElementById("njurarkoll").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("njurarkoll").style.display = "none";
+
+    }
+}
+function panckoll() {
+    if
+        (document.getElementById("pancreas").selectedIndex == "2") {
+        document.getElementById("pkoll").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("pkoll").style.display = "none";
+
+    }
+}
+function ovrigakollar() {
+    if 
+        (document.getElementById("ovr").selectedIndex == "2") {
+        document.getElementById("okoll").style.display = "block";
+
+    }
+
+    else {
+        document.getElementById("okoll").style.display = "none";
+
+    }
+}
