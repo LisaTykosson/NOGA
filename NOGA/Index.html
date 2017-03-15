@@ -37,6 +37,9 @@
             <div class="row container">
                 Patienter i behov av två eller flera kontroller.
             </div>
+            <div class="row container h5">
+                <b>OBSERVERA att detta endast är en prototyp och inget data kommer att sparas. För att uppdatera (vid testregistrering av ny patient exempelvis) tryck ctrl+f5 så återställs sidan.</b> 
+            </div>
         </div>
     </div>
     <div class="panel panel-default center-block" style="width:70%">
@@ -90,7 +93,10 @@
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label class="control-label col-sm-3">Datum för ömsesidig kontakt med genetisk vägledare/läkare</label>
+                        <label class="control-label col-sm-3">Datum för ömsesidig kontakt med genetisk vägledare/läkare   <a data-toggle="tooltip" title="Detta datum är antingen då genetisk vägledare/läkare pratat med patienten eller skickat och fått tillbaka information skriftligt.">
+
+    <i class="glyphicon glyphicon-info-sign"></i></a>
+</label>
                         <div class="col-xs-3">
                             <input type="text" class="form-control" />
                         </div>
@@ -386,7 +392,7 @@
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label class="control-label col-sm-3">Har andra laborativa utredningar utförst/initierats, för att utesluta Lynchs syndrom, hos individen eller familjemedlemmar (MSI/IHC)</label>
+                        <label class="control-label col-sm-3">Har andra laborativa utredningar utförts/initierats, för att utesluta Lynchs syndrom, hos individen eller familjemedlemmar (MSI/IHC)</label>
                         <div class="col-xs-3">
                             <select class="form-control">
                                 <option id="0">--Välj--</option>
@@ -1031,6 +1037,12 @@
                             </select>
                         </div>
                     </div>
+                    <div class="row form-group">
+                        <label class="control-label col-sm-3">Datum för ovanstående beslut</label>
+                        <div class="col-xs-3">
+                           <input type="text" class="form-control" />
+                        </div>
+                    </div>
                     <div id="ingakontroller" style="display:none">
                         <div class="row form-group">
                             <label class="control-label col-sm-3">Orsak</label>
@@ -1088,13 +1100,13 @@
                                     <div class="col-xs-3">
                                         <select class="form-control">
                                             <option id="0">--Välj--</option>
-                                            <option id="1">Oftare än 6 månader</option>
-                                            <option id="2">6 - 12 månader</option>
-                                            <option id="3">1 - 2 år</option>
-                                            <option id="4">2 - 3 år</option>
-                                            <option id="5">3 - 5 år</option>
-                                            <option id="6">Var femte år</option>
-                                            <option id="7">Mer sällan</option>
+                                            <option id="1">6 månader eller oftare</option>
+                                            <option id="2">Varje år</option>
+                                            <option id="3">Varannat år</option>
+                                            <option id="4">Var tredeje år</option>
+                                            <option id="5">Var femte år</option>
+                                            <option id="6">Mer sällan</option>
+                                            <option id="7">Intervaller bestäms av mottagare</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1168,13 +1180,13 @@
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
-                                        <option id="1">Oftare än 6 månader</option>
-                                        <option id="2">6 - 12 månader</option>
-                                        <option id="3">1 - 2 år</option>
-                                        <option id="4">2 - 3 år</option>
-                                        <option id="5">3 - 5 år</option>
-                                        <option id="6">Var femte år</option>
-                                        <option id="7">Mer sällan</option>
+                                        <option id="1">6 månader eller oftare</option>
+                                        <option id="2">Varje år</option>
+                                        <option id="3">Varannat år</option>
+                                        <option id="4">Var tredeje år</option>
+                                        <option id="5">Var femte år</option>
+                                        <option id="6">Mer sällan</option>
+                                        <option id="7">Intervaller bestäms av mottagare</option>
                                     </select>
                                 </div>
                             </div>
@@ -1218,13 +1230,13 @@
                                     <div class="col-xs-3">
                                         <select class="form-control">
                                             <option id="0">--Välj--</option>
-                                            <option id="1">Oftare än 6 månader</option>
-                                            <option id="2">6 - 12 månader</option>
-                                            <option id="3">1 - 2 år</option>
-                                            <option id="4">2 - 3 år</option>
-                                            <option id="5">3 - 5 år</option>
-                                            <option id="6">Var femte år</option>
-                                            <option id="7">Mer sällan</option>
+                                            <option id="1">6 månader eller oftare</option>
+                                            <option id="2">Varje år</option>
+                                            <option id="3">Varannat år</option>
+                                            <option id="4">Var tredeje år</option>
+                                            <option id="5">Var femte år</option>
+                                            <option id="6">Mer sällan</option>
+                                            <option id="7">Intervaller bestäms av mottagare</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1269,13 +1281,13 @@
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
-                                        <option id="1">Oftare än 6 månader</option>
-                                        <option id="2">6 - 12 månader</option>
-                                        <option id="3">1 - 2 år</option>
-                                        <option id="4">2 - 3 år</option>
-                                        <option id="5">3 - 5 år</option>
-                                        <option id="6">Var femte år</option>
-                                        <option id="7">Mer sällan</option>
+                                        <option id="1">6 månader eller oftare</option>
+                                        <option id="2">Varje år</option>
+                                        <option id="3">Varannat år</option>
+                                        <option id="4">Var tredeje år</option>
+                                        <option id="5">Var femte år</option>
+                                        <option id="6">Mer sällan</option>
+                                        <option id="7">Intervaller bestäms av mottagare</option>
                                     </select>
                                 </div>
                             </div>
@@ -1319,13 +1331,13 @@
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
-                                        <option id="1">Oftare än 6 månader</option>
-                                        <option id="2">6 - 12 månader</option>
-                                        <option id="3">1 - 2 år</option>
-                                        <option id="4">2 - 3 år</option>
-                                        <option id="5">3 - 5 år</option>
-                                        <option id="6">Var femte år</option>
-                                        <option id="7">Mer sällan</option>
+                                        <option id="1">6 månader eller oftare</option>
+                                        <option id="2">Varje år</option>
+                                        <option id="3">Varannat år</option>
+                                        <option id="4">Var tredeje år</option>
+                                        <option id="5">Var femte år</option>
+                                        <option id="6">Mer sällan</option>
+                                        <option id="7">Intervaller bestäms av mottagare</option>
                                     </select>
                                 </div>
                             </div>
@@ -1369,13 +1381,13 @@
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
-                                        <option id="1">Oftare än 6 månader</option>
-                                        <option id="2">6 - 12 månader</option>
-                                        <option id="3">1 - 2 år</option>
-                                        <option id="4">2 - 3 år</option>
-                                        <option id="5">3 - 5 år</option>
-                                        <option id="6">Var femte år</option>
-                                        <option id="7">Mer sällan</option>
+                                        <option id="1">6 månader eller oftare</option>
+                                        <option id="2">Varje år</option>
+                                        <option id="3">Varannat år</option>
+                                        <option id="4">Var tredeje år</option>
+                                        <option id="5">Var femte år</option>
+                                        <option id="6">Mer sällan</option>
+                                        <option id="7">Intervaller bestäms av mottagare</option>
                                     </select>
                                 </div>
                             </div>
@@ -1419,13 +1431,13 @@
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
-                                        <option id="1">Oftare än 6 månader</option>
-                                        <option id="2">6 - 12 månader</option>
-                                        <option id="3">1 - 2 år</option>
-                                        <option id="4">2 - 3 år</option>
-                                        <option id="5">3 - 5 år</option>
-                                        <option id="6">Var femte år</option>
-                                        <option id="7">Mer sällan</option>
+                                        <option id="1">6 månader eller oftare</option>
+                                        <option id="2">Varje år</option>
+                                        <option id="3">Varannat år</option>
+                                        <option id="4">Var tredeje år</option>
+                                        <option id="5">Var femte år</option>
+                                        <option id="6">Mer sällan</option>
+                                        <option id="7">Intervaller bestäms av mottagare</option>
                                     </select>
                                 </div>
                             </div>
@@ -1469,13 +1481,13 @@
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
-                                        <option id="1">Oftare än 6 månader</option>
-                                        <option id="2">6 - 12 månader</option>
-                                        <option id="3">1 - 2 år</option>
-                                        <option id="4">2 - 3 år</option>
-                                        <option id="5">3 - 5 år</option>
-                                        <option id="6">Var femte år</option>
-                                        <option id="7">Mer sällan</option>
+                                        <option id="1">6 månader eller oftare</option>
+                                        <option id="2">Varje år</option>
+                                        <option id="3">Varannat år</option>
+                                        <option id="4">Var tredeje år</option>
+                                        <option id="5">Var femte år</option>
+                                        <option id="6">Mer sällan</option>
+                                        <option id="7">Intervaller bestäms av mottagare</option>
                                     </select>
                                 </div>
                             </div>
@@ -1519,13 +1531,13 @@
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
-                                        <option id="1">Oftare än 6 månader</option>
-                                        <option id="2">6 - 12 månader</option>
-                                        <option id="3">1 - 2 år</option>
-                                        <option id="4">2 - 3 år</option>
-                                        <option id="5">3 - 5 år</option>
-                                        <option id="6">Var femte år</option>
-                                        <option id="7">Mer sällan</option>
+                                        <option id="1">6 månader eller oftare</option>
+                                        <option id="2">Varje år</option>
+                                        <option id="3">Varannat år</option>
+                                        <option id="4">Var tredeje år</option>
+                                        <option id="5">Var femte år</option>
+                                        <option id="6">Mer sällan</option>
+                                        <option id="7">Intervaller bestäms av mottagare</option>
                                     </select>
                                 </div>
                             </div>
@@ -1569,13 +1581,13 @@
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
-                                        <option id="1">Oftare än 6 månader</option>
-                                        <option id="2">6 - 12 månader</option>
-                                        <option id="3">1 - 2 år</option>
-                                        <option id="4">2 - 3 år</option>
-                                        <option id="5">3 - 5 år</option>
-                                        <option id="6">Var femte år</option>
-                                        <option id="7">Mer sällan</option>
+                                        <option id="1">6 månader eller oftare</option>
+                                        <option id="2">Varje år</option>
+                                        <option id="3">Varannat år</option>
+                                        <option id="4">Var tredeje år</option>
+                                        <option id="5">Var femte år</option>
+                                        <option id="6">Mer sällan</option>
+                                        <option id="7">Intervaller bestäms av mottagare</option>
                                     </select>
                                 </div>
                             </div>
