@@ -90,7 +90,7 @@
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label class="control-label col-sm-3">Datum för ömsesidig kontakt</label>
+                        <label class="control-label col-sm-3">Datum för ömsesidig kontakt med genetisk vägledare/läkare</label>
                         <div class="col-xs-3">
                             <input type="text" class="form-control" />
                         </div>
@@ -234,7 +234,7 @@
                     </div>
                     <div class="container" id="pavisadmut" style="display:none">
                         <div class="row form-group">
-                            <label class="control-label col-sm-3">Vid vilken typ av utredning upptäcktes mutationen</label>
+                            <label class="control-label col-sm-3">Vid vilken typ av utredning upptäcktes mutationen på individen</label>
                             <div class="col-xs-3">
                                 <select class="form-control">
                                     <option id="0">--Välj--</option>
@@ -386,7 +386,7 @@
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label class="control-label col-sm-3">Har andra laborativa utredningar gjorts, för att utesluta Lynchs syndrom, hos individen eller familjemedlemmat (MSI/IHC)</label>
+                        <label class="control-label col-sm-3">Har andra laborativa utredningar utförst/initierats, för att utesluta Lynchs syndrom, hos individen eller familjemedlemmar (MSI/IHC)</label>
                         <div class="col-xs-3">
                             <select class="form-control">
                                 <option id="0">--Välj--</option>
@@ -580,12 +580,7 @@
 
                     </div>
                     <div id="cancer" style="display:none">
-                        <div class="row form-group">
-                            <label class="control-label col-sm-3">Ålder vid diagnos</label>
-                            <div class="col-xs-3">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
+
 
                         <div class="h5"><b>Organ</b></div>
                         <hr />
@@ -1076,28 +1071,35 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="row form-group">
-                                <label class="control-label col-sm-3">Startålder</label>
-                                <div class="col-xs-3">
-                                    <input type="text" class="form-control" />
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Startålder</label>
+                                    <div class="col-xs-3">
+                                        <input type="text" class="form-control" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
-                                <div class="col-xs-3">
-                                    <select class="form-control">
-                                        <option id="0">--Välj--</option>
-                                        <option id="1">Oftare än 6 månader</option>
-                                        <option id="2">6 - 12 månader</option>
-                                        <option id="3">1 - 2 år</option>
-                                        <option id="4">2 - 3 år</option>
-                                        <option id="5">3 - 5 år</option>
-                                        <option id="6">Var femte år</option>
-                                        <option id="7">Mer sällan</option>
-                                    </select>
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Nuvarande ålder</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
                                 </div>
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Intervaller på kontroller</label>
+                                    <div class="col-xs-3">
+                                        <select class="form-control">
+                                            <option id="0">--Välj--</option>
+                                            <option id="1">Oftare än 6 månader</option>
+                                            <option id="2">6 - 12 månader</option>
+                                            <option id="3">1 - 2 år</option>
+                                            <option id="4">2 - 3 år</option>
+                                            <option id="5">3 - 5 år</option>
+                                            <option id="6">Var femte år</option>
+                                            <option id="7">Mer sällan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                           
                             </div>
-                        </div>
                         <div class="row form-group">
                             <label class="control-label col-sm-3">Bröst</label>
                             <div class="col-xs-3">
@@ -1121,8 +1123,8 @@
                                     </select>
                                 </div>
                             </div>
-                            <div id="boadi" style="display:none" >
-                                <div class="row form-group" >
+                            <div id="boadi" style="display:none">
+                                <div class="row form-group">
                                     <label class="control-label col-sm-3">Risk enligt BOADICEA</label>
                                     <div class="col-xs-3">
                                         <select class="form-control">
@@ -1156,7 +1158,13 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <label class="control-label col-sm-3">Nuvarande ålder</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller</label>
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
@@ -1193,28 +1201,35 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="row form-group">
-                                <label class="control-label col-sm-3">Startålder</label>
-                                <div class="col-xs-3">
-                                    <input type="text" class="form-control" />
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Startålder</label>
+                                    <div class="col-xs-3">
+                                        <input type="text" class="form-control" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
-                                <div class="col-xs-3">
-                                    <select class="form-control">
-                                        <option id="0">--Välj--</option>
-                                        <option id="1">Oftare än 6 månader</option>
-                                        <option id="2">6 - 12 månader</option>
-                                        <option id="3">1 - 2 år</option>
-                                        <option id="4">2 - 3 år</option>
-                                        <option id="5">3 - 5 år</option>
-                                        <option id="6">Var femte år</option>
-                                        <option id="7">Mer sällan</option>
-                                    </select>
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Nuvarande ålder</label>
+                                    <div class="col-xs-3">
+                                        <input type="checkbox" />
+                                    </div>
                                 </div>
+                                <div class="row form-group">
+                                    <label class="control-label col-sm-3">Intervaller på kontroller</label>
+                                    <div class="col-xs-3">
+                                        <select class="form-control">
+                                            <option id="0">--Välj--</option>
+                                            <option id="1">Oftare än 6 månader</option>
+                                            <option id="2">6 - 12 månader</option>
+                                            <option id="3">1 - 2 år</option>
+                                            <option id="4">2 - 3 år</option>
+                                            <option id="5">3 - 5 år</option>
+                                            <option id="6">Var femte år</option>
+                                            <option id="7">Mer sällan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                           
                             </div>
-                        </div>
                         <div class="row form-group">
                             <label class="control-label col-sm-3">Livmoder</label>
                             <div class="col-xs-3">
@@ -1244,7 +1259,13 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <label class="control-label col-sm-3">Nuvarande ålder</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller</label>
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
@@ -1288,7 +1309,13 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <label class="control-label col-sm-3">Nuvarande ålder</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller</label>
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
@@ -1332,7 +1359,13 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <label class="control-label col-sm-3">Nuvarande ålder</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller</label>
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
@@ -1376,7 +1409,13 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <label class="control-label col-sm-3">Nuvarande ålder</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller</label>
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
@@ -1420,7 +1459,13 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <label class="control-label col-sm-3">Nuvarande ålder</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller</label>
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
@@ -1464,7 +1509,13 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <label class="control-label col-sm-3">Nuvarande ålder</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller</label>
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
@@ -1508,7 +1559,13 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <label class="control-label col-sm-3">Intervaller på kontroller för icke mutationsbärare</label>
+                                <label class="control-label col-sm-3">Nuvarande ålder</label>
+                                <div class="col-xs-3">
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="control-label col-sm-3">Intervaller på kontroller</label>
                                 <div class="col-xs-3">
                                     <select class="form-control">
                                         <option id="0">--Välj--</option>
